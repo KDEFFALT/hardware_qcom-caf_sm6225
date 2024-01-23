@@ -8,6 +8,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE                := libarpal_headers
 LOCAL_VENDOR_MODULE         := true
 LOCAL_EXPORT_C_INCLUDE_DIRS := \
+    $(LOCAL_PATH) \
     $(LOCAL_PATH)/stream/inc \
     $(LOCAL_PATH)/device/inc \
     $(LOCAL_PATH)/session/inc \
@@ -15,6 +16,7 @@ LOCAL_EXPORT_C_INCLUDE_DIRS := \
     $(LOCAL_PATH)/context_manager/inc \
     $(LOCAL_PATH)/utils/inc \
     $(LOCAL_PATH)/plugins/codecs
+
 include $(BUILD_HEADER_LIBRARY)
 
 ifneq ($(QCPATH),)

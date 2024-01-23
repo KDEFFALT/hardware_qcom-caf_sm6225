@@ -87,8 +87,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.display.disable_idle_time_hdr=1 \
     debug.sf.predict_hwc_composition_strategy=0
 
-# Enable offline rotator for Bengal, Monaco, Khaje.
-ifneq ($(filter bengal monaco khaje, $(TARGET_BOARD_PLATFORM)),$(TARGET_BOARD_PLATFORM))
+# Enable offline rotator for Bengal, Monaco, Khaje, Trinket.
+ifneq ($(filter bengal monaco khaje trinket, $(TARGET_BOARD_PLATFORM)),$(TARGET_BOARD_PLATFORM))
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.display.disable_offline_rotator=1
 else

@@ -2777,6 +2777,11 @@ int HWCSession::HandleBuiltInDisplays() {
 
 int HWCSession::HandlePluggableDisplays(bool delay_hotplug) {
   SCOPE_LOCK(pluggable_handler_lock_);
+  if (null_display_mode_) {
+    DLOGW("Skipped pluggable display handling in null-display mode");
+    return 0;
+  }
+
   if (null_display_active_) {
     SCOPE_LOCK(locker_[HWC_DISPLAY_PRIMARY]);
     auto &hwc_display = hwc_display_[HWC_DISPLAY_PRIMARY];
